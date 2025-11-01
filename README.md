@@ -1,115 +1,65 @@
-# cse134b_hw2_portfolio
+# cse134b_hw3_portfolio_css
 
-## Part 2 : HTML only Execution (110 pts + 10 pts Extra Credit)
+## Part 1 - Standards Based CSS Use (30 pts + 4 EC points)
 
-**For this assignment, we \*ONLY WANT HTML\* (unless specified below - as in case of semantic CSS custom elements). The point of this assignment is not for your website to look good but for it to be structured well, have thoughtful content, and use semantic markup.**
+Include the link to your website and the Github repo with the code on the first page of your document.
 
-**We STRONGLY recommend using Multiple Pages to complete this part (& showing it in the sitemap in Part 1.)**
+To demonstrate CSS knowledge, use the technology to style your HTML pages from the previous homework (HW2). You may need to add classes, ids, and restructure your elements in order to do this task. That is fine. However, do not convert your site to a <div> dominant design - this can result in significant point loss.
 
-In this section you will build out a valid semantic and structural HTML-only site in alignment with the portfolio you planned out in part 1. Valid means your pages should validate using the validator service at [https://validator.w3.org/Links to an external site.](https://validator.w3.org/) as demonstrated in discussion. More on this in **"Other grading points and details"** section.
+To layout your page you MUST use CSS Flexbox and/or CSS Grid (10 pts). You do not have to account for ancient browsers so assume Edge Chromium, Chrome, latest Safari and latest Firefox level access.
 
-**Your site must contain all the following tags** (**43 tags \* 2 = 86 pts**)**
-**[The items with a * and *italics* have notes to read below.] 
+To style your page, use whichever CSS properties you like, but you must show demonstration of these intermediate or advanced ideas:
 
-| html      | b            |
-| --------- | ------------ |
-| head      | i            |
-| title     | strong       |
-| meta      | ==em==       |
-| link      | a            |
-| *script** | img          |
-| *style**  | picture      |
-| body      | iframe       |
-| main      | *svg**       |
-| h1        | ul           |
-| h2        | ol           |
-| h3        | li           |
-| p         | ==form==     |
-| section   | label        |
-| header    | fieldset     |
-| footer    | legend       |
-| nav       | input        |
-| ==div==   | ==textarea== |
-| ==span==  | article      |
-| br        | progress     |
-| *button** | dialog       |
-| noscript  |              |
+- CSS Variables (with fallbacks while using variables) used in at least two different styling contexts (2 pts)
+- Custom Fonts (also with fallback to a serif or sans serif font in case of failure). For full credit code must show signs of the font being imported, you CANNOT rely on your browser already having your font of choice. (2 pts)
+- Relative units including but not limited to em, rem, %. (3 pts)
+- Dynamic viewport units including but not limited to dvw, dvh.  (2 pts)
+- CSS Animations, Transitions and Transforms (3 pts)
+- Media Queries (See Part 3 - Responsive Web Design)
+- Nested and Scoped CSS (4 pts)
+- Any new CSS-related feature from Baseline 2024 or Baseline 2025 (see https://web.dev/baseline/2024). For full credit, include in your submission a 2+ sentence-long description of the feature you chose to implement. (2 pts for correct implementation of the feature, 2 pts for the description)
 
-**Additionally you must create two custom elements. Both should be named based on the guidelines below**
+### Extra Credit: 
 
-- 它们以ASCII 小写字母开头，确保HTML 解析器将它们视为标签而非文本。
-- 它们不包含任何ASCII 大写字母，确保用户代理始终可以不区分大小写地处理HTML 元素。
-- 它们包含连字符，用于命名空间并确保向前兼容性（因为未来不会向HTML、SVG 或MathML 添加带有连字符的本地名称的元素）。
-- 它们始终可以使用 `createElement()` 和 `createElementNS()` 创建，这些方法有超出解析器范围的限制。
+Some of the following might not have the maximum adoption (currently, most are hovering around 87-88% adoption) but are worth trying out:
 
-- **ONE such element is a semantic CSS custom element for any purpose you wish; the no-scripting/JS rule applies for this but CSS styling** **to establish structure is allowed and encouraged**. Any CSS within a selector specific to this element will NOT count towards the our CSS property limits. **(2 pts)**
+- Use wider gamut color with color() and color-mix() (2 pts)
+- New selectors like has() (2 pts)
 
-- **the other such element is a Hello World custom element -** literally your own HTML tag that, when placed in the page, will print a simple message like ("Hello world!") **TO THE CONSOLE** (this should not modify the DOM - we will not give credit in this case). Since we haven't covered JS in detail, you are free to use generative AI to complete this part. Any JS specific to this part will NOT count towards our no-scripting/JS rules. **(2 pts)**
+Any CSS written should be as standard as is possible. 
 
-**Past iterations of the class had more tags but we realized not all of them will fit into your portfolio site in a reasonable way, so we have significantly shrunk the number of elements expected for part 2. Nevertheless, for full credit create page 'experiments.html' showing proper use of the elements (6 elems \* 2 pts = 12 pts total). To expedite grading and avoid delays, deploy this page in the same Netlify deployment as the section above, and use the exact name we gave.
+## Part 2 - Image Usage (15 pts)
 
-**
+To further enhance your page presentation you should use images. Our minimum threshold for image usage is "a reasonable amount" based on your webpage content - we will take a holistic approach to this.
 
-| *template** |
-| ----------- |
-| picture     |
-| audio       |
-| video       |
-| *canvas**   |
-| source      |
+- You may use images of any form (GIF, JPEG, WebP, SVG, etc.), but make sure that the types are appropriate for the content served (6 points)
 
- Extra Credit:
+- Your images should be optimized for delivery (3 pts) - you should address delivering the appropriate size and/or type of image given the needs of responsive design discussed in the next section. The use of the <picture> tag and the srcset as well as corresponding aspects of media queries are excellent tools for this, so you are not sending too many bytes to small or lower-powered devices.
+- Accessibility issues with your images such as alternative text, proper use of contrast and proper use of foreground or background should be accounted for (6 pts)
+- To adjust pictures with their frames we recommend using object-position and object-fit attributes.
 
-1. Use [MathMLLinks to an external site.](https://developer.mozilla.org/en-US/docs/Web/MathML) to **write the formula** for Einstein's famous formula E=mc2 **(5 pts)**
-2. Despite being in the HTML specification for a long time, developers could not make use of it until quite recently. Explain why that might be the case (Hint: Check the [caniuse.comLinks to an external site.](https://caniuse.com/) page for MathML!) **(5 pts)**
+## Part 3 - Responsive Design (10 points)
 
-### Other grading points and details
+To address device diversity your site should practice the principle of responsive web design. You should account for three types of form factors. Very small screen (phone), tablet or restrictive laptop, and desktop (6 pts total). Employ appropriate pixel breakpoints based upon those factors. There may be variation of those dimensions so do a little research (Note: DevTools can help simulate different screen sizes)
 
-- ==Validation (8 pts).== 
+Make sure your CSS layouts reflow appropriately and do not require pinch, zoom, or unnecessary horizontal scroll (3 pts). Also make sure per the previous section that images are sized appropriately per device dimension.
 
-  There are two ways to get the full credit:
+Lastly, you may see that the different devices suggest concrete interface changes (e.g.: emergence of a Hamburger menu, touch-aware layout, etc.). You need to show evidence that your design adjusts to address such things (1 pt).
 
-  - The page validates (we will be checking your netlify site with [https://validator.w3.org/Links to an external site.](https://validator.w3.org/) OR
-  - If it does not, explain in detail 1) what you have attempted to achieve validation and 2) your theories on why it may not be validating. Be detailed in your thoughts to receive the full credit
+ 
 
-- Pages must **not suffer form "div-itis"** and exhibit reasonably semantic HTML
+## Part 4 - Aesthetics and Usability (10 pts + 5 EC)
 
-- You must use all the tags on the table above. Each tag used is worth two points (1pt for presence and 1pt for appropriate contextual use or demo)
+The look of the site and our ability as end users to understand what you are doing is paramount. No matter how well we do our sites functionally, if we have a poor experience, we will ultimately fail.
 
-- Misuse of CSS or Script attempting to build the site early will result in a loss of 25% of your overall points.
+We award up to 5 pts for the aesthetics and 5 ptsfor the usability of the site. If you are simple and precise in look  (aka "minimalistic") and obvious in navigation, you will likely get most of the points, but there is inevitable subjectivity based upon the interpretation of the graders. While we have kept the amount of points very low, understand in "real life" most people would attach most of the points here. Particularly excellent jobs may receive up to 5 extra credit points at our discretion.
 
-- **Recycling the HW1 repo ([https://github.com/ProfPowell/cse134-hw1/Links to an external site.](https://github.com/ProfPowell/cse134-hw1/)) as your portfolio page will result in a loss of 25% of your overall points**
+ 
 
-Make sure to host your site on Netlify hosting and provide a link to it in the Part 1 pdf submission.
+## Restrictions and Logistic Details
 
-==下面这些== 
-
-```
-<style> 
-```
-
-**Note:** You may NOT style your pages beyond using a border to provide a base page structure. If you have more than 3 CSS properties (total, not unique) in your file, points can be deducted. *border* or *border-width* will not count towards this limit.
-
-```
-<script> 
-```
-
-**Note:** You may add script as a placeholder to show the use of a third-party script for analytics or for use with a tag that we have permitted the use of JS for (e.g. the **canvas** tag). No interactions are allowed at this stage. Otherwise, you will be deducted points. 
-
-```
-<button> 
-```
-
-**Because of our "no scripting" rule for HW2, your button do NOT need to work for now.** Do take care that your markup is valid and well done for these but they do not need to actually do anything yet.
-
-```
-<canvas> 
-```
-
-**Note:** To demonstrate the use of a <canvas> tag, you may include some MINOR AMOUNT of JavaScript. You are simply exploring the idea of the tag. If you have more than 15 lines of script to do something, assume you did too much.
-
-```
-<template> 
-```
-
-**This element is also subject to our no-JS rule. We ask that you do not write the Javascript that clones the template and adds it into the webpage (for now).** You can simply have the contents of the template somewhere in your HTML code it doesn't have to show.
+- All CSS must be hand authored - no frameworks like Twitter Bootstrap or Tailwind (points can be lost).
+- You may not purchase a theme or represent an existing design as your own work. While you are free to use such things as inspiration, direct usage will be considered an AIP violation
+- You may use stock photography images with or without watermarks. If you use stock imagery out of courtesy, provide HTML comment situations or use a <cite> element to show us where you got the images. This is an important thing to get used to, as misuse of images online can and does resort in legal demand letters. Be aware of what you are pulling in, and think about the copyrights/licences.
+- AI Image copyright laws are sensitive around the subject, and regulations around the world are not up to date yet. If you choose to use AI images, review the copyright and usage rules of the tool of your choice.
+- You should still not be using JS in your assignment at this stage. You can continue to stub out files or plan for JS, which will be included in the final  steps.

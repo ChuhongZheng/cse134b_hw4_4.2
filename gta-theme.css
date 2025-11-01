@@ -492,3 +492,43 @@ input::placeholder, textarea::placeholder {
 .home-theme textarea::placeholder {
   color: #999;
 }
+
+/* CSS 动画、过渡和变换样式 */
+/* 按钮悬停效果 */
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* 卡片悬停效果 */
+.card:hover,
+article:hover,
+.interest-card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* 导航链接悬停效果 */
+nav a:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* 表单元素焦点效果 */
+input:focus,
+textarea:focus {
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px var(--gta-gold);
+}
+
+/* 进度条动画 */
+progress {
+  transition: all 0.3s ease;
+}
+
+progress:hover {
+  transform: scale(1.02);
+}

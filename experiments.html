@@ -4,15 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experiments - My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gta-theme.css">
     <script src="custom-elements.js"></script>
     <style>
         .bordered {
             border: 1px solid #ccc;
         }
+        
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+        }
+        
+        header {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-image: url('bg_night.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(30, 10, 90, 0.3);
+        }
+        
+        section {
+            margin: 2rem 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+        
+        .experiments-theme h1 {
+            font-family: 'Pricedown', 'Impact', sans-serif;
+            font-size: 4rem;
+            color: white;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #000;
+            text-shadow: 2px 2px 0 #000;
+            margin: 1rem 0;
+        }
+        
+        .experiments-theme h2 {
+            font-family: 'Pricedown', 'Impact', sans-serif;
+            color: white;
+            -webkit-text-stroke: 1px #000;
+            text-shadow: 1px 1px 0 #000;
+        }
+        
+        article {
+            margin: 1rem 0;
+        }
+        
+        picture, audio, video, canvas {
+            display: block;
+            margin: 1rem auto;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        
+        canvas {
+            background-color: white;
+        }
     </style>
 </head>
-<body>
+<body class="experiments-theme">
     <header>
         <h1>HTML Experiments</h1>
         <nav>
@@ -30,7 +90,7 @@
         <section>
             <h2>HTML5 Elements Showcase</h2>
             
-            <article>
+            <article class="card">
                 <h3>Template Element</h3>
                 <p>The <i>template</i> element holds client-side content that is not displayed when the page loads:</p>
                 <template id="myTemplate">
@@ -39,7 +99,7 @@
                 </template>
             </article>
             
-            <article>
+            <article class="card">
                 <h3>Picture Element</h3>
                 <p>The <i>picture</i> element offers different image sources for different screen sizes:</p>
                 <picture>
@@ -49,7 +109,7 @@
                 </picture>
             </article>
             
-            <article>
+            <article class="card">
                 <h3>Audio Element</h3>
                 <p>Embed <i>audio</i> content in the page:</p>
                 <audio controls>
@@ -58,7 +118,7 @@
                 </audio>
             </article>
             
-            <article>
+            <article class="card">
                 <h3>Video Element</h3>
                 <p>Embed <i>video</i> content in the page:</p>
                 <video width="320" height="240" controls>
@@ -67,7 +127,7 @@
                 </video>
             </article>
             
-            <article>
+            <article class="card">
                 <h3>Canvas Element</h3>
                 <p><i>Canvas</i> for drawing graphics via JavaScript:</p>
                 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
@@ -82,7 +142,7 @@
                 </script>
             </article>
             
-            <article>
+            <article class="card">
                 <h3>Source Element</h3>
                 <p>Multiple <i>source</i> elements for media elements:</p>
                 <video width="320" height="240" controls>

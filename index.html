@@ -4,16 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gta-theme.css">
     <script src="custom-elements.js"></script>
     <style>
-        /* 只使用border属性来设置基础结构 */
-        .bordered {
-            border: 1px solid #ccc;
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+        }
+        
+        header {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        section {
+            margin: 2rem 0;
+        }
+        
+        .home-theme h1 {
+            font-family: 'Pricedown', 'Impact', sans-serif;
+            font-size: 4rem;
+            color: #1d3557;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #fff;
+            text-shadow: 2px 2px 0 #000;
+            margin: 1rem 0;
+        }
+        
+        .home-theme h2 {
+            font-family: 'Pricedown', 'Impact', sans-serif;
+            color: #1d3557;
+            -webkit-text-stroke: 1px #fff;
+            text-shadow: 1px 1px 0 #000;
+        }
+        
+        .profile-image {
+            width: 300px;
+            height: 350px;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 4px solid #000;
+            box-shadow: 5px 5px 0 #fff, 10px 10px 0 #000;
+            object-fit: cover;
         }
     </style>
 </head>
-<body>
+<body class="home-theme">
     <header>
         <h1>My Portfolio Website</h1>
         <nav>
@@ -32,7 +73,7 @@
             <h2>Welcome to My Portfolio</h2>
             <p>This is my <em>personal portfolio website</em> showcasing my projects and skills.</p>
             
-            <article>
+            <article class="card">
                 <h3>Featured Project</h3>
                 <p>Check out my latest project that demonstrates my skills and expertise.</p>
             </article>
@@ -40,13 +81,7 @@
         
         <section>
             <h2>About Me</h2>
-            <img src="real.jpg" width="200" height="200" alt="me">
-            <svg width="50" height="50" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="yellow" />
-                <circle cx="35" cy="40" r="5" fill="black" />
-                <circle cx="65" cy="40" r="5" fill="black" />
-                <path d="M 30 65 Q 50 85 70 65" stroke="black" stroke-width="3" fill="none" />
-            </svg>
+            <img src="gta_me.png" class="profile-image" alt="GTA style me">
             <p>I'm a student studying Computer Science at <b>UC San Diego</b>.</p>
             <p>In my free time, I enjoy coding, reading and learning new technologies.</p>
             <p>I have knowledge in various programming languages including <i>Python</i>, <i>JavaScript</i>, and <i>Java</i>.</p>

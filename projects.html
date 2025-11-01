@@ -4,15 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gta-theme.css">
     <script src="custom-elements.js"></script>
     <style>
-        .bordered {
-            border: 1px solid #ccc;
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+        }
+        
+        header {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-image: url('bg_sunset.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(255, 190, 120, 0.2);
+        }
+        
+        section {
+            margin: 2rem 0;
+            background-color: rgba(255, 190, 120, 0.25);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+        
+        .projects-theme h1 {
+            font-family: 'Pricedown', 'Impact', sans-serif;
+            font-size: 4rem;
+            color: white;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #000;
+            text-shadow: 2px 2px 0 #000;
+            margin: 1rem 0;
+        }
+        
+        .projects-theme h2 {
+            font-family: 'Pricedown', 'Impact', sans-serif;
+            color: white;
+            -webkit-text-stroke: 1px #000;
+            text-shadow: 1px 1px 0 #000;
+        }
+        
+        progress {
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            margin: 1rem 0;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        progress::-webkit-progress-bar {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid #000;
+        }
+        
+        progress::-webkit-progress-value {
+            background: linear-gradient(90deg, #ff9966, #ff5e62);
+            border-radius: 10px;
+        }
+        
+        progress::-moz-progress-bar {
+            background: linear-gradient(90deg, #ff9966, #ff5e62);
+            border-radius: 10px;
         }
     </style>
 </head>
-<body>
+<body class="projects-theme">
     <header>
         <h1>My Projects</h1>
         <nav>
@@ -30,13 +96,13 @@
         <section>
             <h2>Featured Projects</h2>
             
-            <article>
+            <article class="card">
                 <h3>Portfolio Website</h3>
                 <p>A responsive portfolio website built with <i>HTML</i>, <i>CSS</i>, and <i>JavaScript</i>.</p>
                 <progress value="100" max="100">100%</progress>
             </article>
             
-            <article>
+            <article class="card">
                 <h3>Task Manager App</h3>
                 <p>A web-based task management application with CRUD operations built using <i>React</i> and <i>Node.js</i>.</p>
                 <progress value="75" max="100">75%</progress>

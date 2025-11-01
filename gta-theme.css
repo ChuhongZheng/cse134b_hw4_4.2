@@ -1,0 +1,494 @@
+/* GTA 5 主题样式 */
+
+/* 字体定义 */
+@font-face {
+  font-family: 'Pricedown';
+  src: url('fonts/pricedown.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CSS 变量定义 */
+:root {
+  /* GTA 主色调 */
+  --gta-blue: #4A7B9D;
+  --gta-red: #8B0000;
+  --gta-gold: #FFD700;
+  --gta-black: #000000;
+  --gta-white: #FFFFFF;
+  --gta-light-gray: #eee;
+  --gta-dark-gray: #333;
+  
+  /* 霞光主题颜色 */
+  --sunset-orange: #FF5E62;
+  --sunset-pink: #ff9966;
+  --sunset-gold: #FFB347;
+  
+  /* 霓虹主题颜色 */
+  --neon-purple: #1f005c;
+  --neon-blue: #3b0066;
+  --neon-darkblue: #00142d;
+  --neon-cyan: #00FFFF;
+  --neon-pink: #FF00A8;
+  
+  /* 漫画主题颜色 */
+  --comic-yellow: #f2eecb;
+  --comic-red: #e63946;
+  --comic-blue: #457b9d;
+  --comic-light: #f1faee;
+  --comic-darkblue: #1d3557;
+  --comic-darkgreen: #2a4d2d;
+  
+  /* 字体 */
+  --font-heading: 'Pricedown', 'Impact', sans-serif;
+  --font-body: 'Roboto', 'Open Sans', sans-serif;
+}
+
+/* 基础样式重置 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 主题样式 */
+/* 漫画封面风格 - 用于首页 */
+.home-theme {
+  background-color: var(--comic-yellow);
+  color: var(--comic-darkblue);
+}
+
+/* 日落风格 - 用于关于页面和项目页面 */
+.about-theme,
+.projects-theme {
+  background: linear-gradient(135deg, var(--sunset-pink) 0%, var(--sunset-orange) 100%);
+  color: var(--gta-white);
+}
+
+/* 霓虹风格 - 用于实验页面和联系页面 */
+.experiments-theme,
+.contact-theme {
+  background: radial-gradient(circle at 30% 30%, var(--neon-purple), var(--neon-blue), var(--neon-darkblue));
+  color: var(--gta-white);
+}
+
+/* 标题样式 */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--gta-black);
+  text-shadow: 2px 2px 0 var(--gta-black);
+  letter-spacing: 1px;
+}
+
+/* 首页标题样式 - 改善可读性 */
+.home-theme h1, 
+.home-theme h2, 
+.home-theme h3 {
+  -webkit-text-stroke: 1px var(--gta-white);
+  text-shadow: 2px 2px 0 var(--gta-black);
+  color: var(--comic-darkgreen);
+}
+
+/* 正文样式 */
+body, p, li, label, input, textarea {
+  font-family: var(--font-body);
+  color: var(--gta-light-gray);
+  line-height: 1.6;
+}
+
+/* 漫画主题下的正文样式 */
+.home-theme body,
+.home-theme p,
+.home-theme li,
+.home-theme label {
+  color: var(--comic-darkblue);
+}
+
+/* 链接样式 */
+a {
+  color: var(--gta-gold);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gta-white);
+  text-decoration: underline;
+}
+
+/* 按钮样式 */
+.btn, button, input[type="submit"] {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 按钮样式 - 漫画主题 */
+.home-theme .btn,
+.home-theme button,
+.home-theme input[type="submit"] {
+  border: 4px solid var(--gta-black);
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 var(--gta-white), 6px 6px 0 var(--gta-black);
+  background: var(--comic-light);
+  color: var(--gta-black);
+  padding: 12px 24px;
+}
+
+.home-theme .btn:hover,
+.home-theme button:hover,
+.home-theme input[type="submit"]:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--gta-white), 3px 3px 0 var(--gta-black);
+}
+
+/* 按钮样式 - 日落主题 */
+.about-theme .btn,
+.about-theme button,
+.about-theme input[type="submit"],
+.projects-theme .btn,
+.projects-theme button,
+.projects-theme input[type="submit"] {
+  border: 3px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(var(--sunset-pink), var(--sunset-orange)) padding-box,
+              linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
+  box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
+  color: var(--gta-white);
+  padding: 12px 24px;
+}
+
+.about-theme .btn:hover,
+.about-theme button:hover,
+.about-theme input[type="submit"]:hover,
+.projects-theme .btn:hover,
+.projects-theme button:hover,
+.projects-theme input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 94, 98, 0.6);
+}
+
+/* 按钮样式 - 霓虹主题 */
+.experiments-theme .btn,
+.experiments-theme button,
+.experiments-theme input[type="submit"],
+.contact-theme .btn,
+.contact-theme button,
+.contact-theme input[type="submit"] {
+  border: 2px solid var(--neon-cyan);
+  border-radius: 10px;
+  box-shadow:
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-pink),
+    inset 0 0 10px var(--neon-cyan);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--gta-white);
+  padding: 12px 24px;
+}
+
+.experiments-theme .btn:hover,
+.experiments-theme button:hover,
+.experiments-theme input[type="submit"]:hover,
+.contact-theme .btn:hover,
+.contact-theme button:hover,
+.contact-theme input[type="submit"]:hover {
+  box-shadow:
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-cyan),
+    0 0 30px var(--neon-pink),
+    inset 0 0 15px var(--neon-cyan);
+}
+
+/* 霓虹动画效果 */
+@keyframes pulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px var(--neon-cyan),
+      0 0 20px var(--neon-pink),
+      inset 0 0 10px var(--neon-cyan);
+  }
+  50% { 
+    box-shadow: 
+      0 0 10px var(--neon-cyan),
+      0 0 20px var(--neon-cyan),
+      0 0 30px var(--neon-pink),
+      inset 0 0 15px var(--neon-cyan);
+  }
+}
+
+.experiments-theme .btn,
+.contact-theme .btn {
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* 卡片样式 */
+.card, article, .interest-card {
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* 卡片样式 - 漫画主题 */
+.home-theme .card,
+.home-theme article,
+.home-theme .interest-card {
+  border: 4px solid var(--gta-black);
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 var(--gta-white), 6px 6px 0 var(--gta-black);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* 卡片内的标题样式 - 改善可读性 */
+.home-theme .card h3,
+.home-theme article h3,
+.home-theme .interest-card h2 {
+  -webkit-text-stroke: 1px var(--gta-white);
+  text-shadow: 1px 1px 0 var(--gta-black);
+  color: var(--comic-darkgreen);
+}
+
+/* 卡片样式 - 日落主题 */
+.about-theme .card,
+.about-theme article,
+.about-theme .interest-card,
+.projects-theme .card,
+.projects-theme article,
+.projects-theme .interest-card {
+  border: 3px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(var(--sunset-pink), var(--sunset-orange)) padding-box,
+              linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* 卡片样式 - 霓虹主题 */
+.experiments-theme .card,
+.experiments-theme article,
+.experiments-theme .interest-card,
+.contact-theme .card,
+.contact-theme article,
+.contact-theme .interest-card {
+  border: 2px solid var(--neon-cyan);
+  border-radius: 10px;
+  box-shadow:
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-pink),
+    inset 0 0 10px var(--neon-cyan),
+    5px 5px 0 rgba(0, 0, 0, 0.3),
+    10px 10px 0 rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 导航栏样式 */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+/* 导航栏样式 - 漫画主题 */
+.home-theme nav ul {
+  border: 4px solid var(--gta-black);
+  box-shadow: 3px 3px 0 var(--gta-white), 6px 6px 0 var(--gta-black);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* 导航栏内的链接样式 - 改善可读性 */
+.home-theme nav a {
+  -webkit-text-stroke: 1px var(--gta-white);
+  text-shadow: 1px 1px 0 var(--gta-black);
+  color: var(--comic-darkgreen);
+}
+
+/* 导航栏样式 - 日落主题 */
+.about-theme nav ul,
+.projects-theme nav ul {
+  border: 3px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(var(--sunset-pink), var(--sunset-orange)) padding-box,
+              linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* 导航栏样式 - 霓虹主题 */
+.experiments-theme nav ul,
+.contact-theme nav ul {
+  border: 2px solid var(--neon-cyan);
+  border-radius: 10px;
+  box-shadow:
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-pink),
+    inset 0 0 10px var(--neon-cyan),
+    5px 5px 0 rgba(0, 0, 0, 0.3),
+    10px 10px 0 rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--gta-white);
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--gta-black);
+  text-shadow: 1px 1px 0 var(--gta-black);
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--gta-gold);
+  text-decoration: none;
+}
+
+/* 页脚样式 */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* 页脚样式 - 漫画主题 */
+.home-theme footer {
+  border-top: 4px solid var(--gta-black);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* 页脚样式 - 日落主题 */
+.about-theme footer,
+.projects-theme footer {
+  border-top: 3px solid transparent;
+  background: linear-gradient(var(--sunset-pink), var(--sunset-orange)) padding-box,
+              linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* 页脚样式 - 霓虹主题 */
+.experiments-theme footer,
+.contact-theme footer {
+  border-top: 2px solid var(--neon-cyan);
+  box-shadow:
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-pink),
+    inset 0 0 10px var(--neon-cyan),
+    5px 5px 0 rgba(0, 0, 0, 0.3),
+    10px 10px 0 rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 表单样式 */
+form {
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* 表单样式 - 漫画主题 */
+.home-theme form {
+  border: 4px solid var(--gta-black);
+  box-shadow: 3px 3px 0 var(--gta-white), 6px 6px 0 var(--gta-black);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* 表单样式 - 日落主题 */
+.about-theme form,
+.projects-theme form {
+  border: 3px solid transparent;
+  background: linear-gradient(var(--sunset-pink), var(--sunset-orange)) padding-box,
+              linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* 表单样式 - 霓虹主题 */
+.experiments-theme form,
+.contact-theme form {
+  border: 2px solid var(--neon-cyan);
+  box-shadow:
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-pink),
+    inset 0 0 10px var(--neon-cyan),
+    5px 5px 0 rgba(0, 0, 0, 0.3),
+    10px 10px 0 rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* 表单字段样式 - 漫画主题 */
+.home-theme fieldset {
+  border: 3px solid var(--gta-black);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 表单字段样式 - 日落主题 */
+.about-theme fieldset,
+.projects-theme fieldset {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 表单字段样式 - 霓虹主题 */
+.experiments-theme fieldset,
+.contact-theme fieldset {
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 5px var(--neon-cyan);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+input, textarea {
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+/* 表单输入样式 - 漫画主题 */
+.home-theme input,
+.home-theme textarea {
+  border: 2px solid var(--gta-black);
+  background: var(--gta-white);
+  color: var(--comic-darkblue);
+}
+
+/* 表单输入样式 - 日落主题 */
+.about-theme input,
+.about-theme textarea,
+.projects-theme input,
+.projects-theme textarea {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--gta-white);
+}
+
+/* 表单输入样式 - 霓虹主题 */
+.experiments-theme input,
+.experiments-theme textarea,
+.contact-theme input,
+.contact-theme textarea {
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 5px var(--neon-cyan);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--gta-white);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+}
+
+.home-theme input::placeholder,
+.home-theme textarea::placeholder {
+  color: #999;
+}

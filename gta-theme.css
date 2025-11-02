@@ -19,6 +19,12 @@
   --gta-light-gray: #eee;
   --gta-dark-gray: #333;
   
+  /* 广色域颜色示例 - 使用更广的色域颜色空间 display-p3 */
+  --gta-blue-wide: color(display-p3 0.29 0.48 0.61);
+  --gta-gold-wide: color(display-p3 1 0.84 0);
+  /* 使用 color-mix() 函数混合两种颜色 */
+  --gta-mixed-color: color-mix(in srgb, var(--gta-blue), var(--gta-gold) 50%);
+  
   /* 霞光主题颜色 */
   --sunset-orange: #FF5E62;
   --sunset-pink: #ff9966;
@@ -157,7 +163,8 @@ a {
 .projects-theme input[type="submit"] {
   border: 3px solid transparent;
   border-radius: 12px;
-  background: linear-gradient(var(--sunset-pink), var(--sunset-orange)) padding-box,
+  /* 使用广色域颜色 */
+  background: linear-gradient(var(--gta-blue-wide), var(--gta-gold-wide)) padding-box,
               linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
   box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
   color: var(--gta-white);
@@ -256,7 +263,8 @@ a {
 .projects-theme .interest-card {
   border: 3px solid transparent;
   border-radius: 12px;
-  background: linear-gradient(var(--sunset-pink), var(--sunset-orange)) padding-box,
+  /* 使用广色域混合色 */
+  background: linear-gradient(var(--gta-mixed-color), var(--sunset-orange)) padding-box,
               linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
 }

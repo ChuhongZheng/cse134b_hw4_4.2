@@ -55,7 +55,7 @@
             text-shadow: 1px 1px 0 #000;
         }
         
-        /* 汉堡菜单样式 */
+        /* Hamburger Menu Styles */
         .menu-toggle {
             display: none;
         }
@@ -79,7 +79,7 @@
             transition: 0.3s;
         }
         
-        /* 响应式设计 - 手机设备 */
+        /* Responsive Design - Mobile Devices */
         @media screen and (max-width: 768px) {
             .menu-toggle-label {
                 display: flex;
@@ -127,32 +127,18 @@
             
             .experiments-theme h1 {
                 font-size: 3rem;
-                margin: 0.5rem 0;
             }
-        }
-        
-        .media-container {
-            margin: 1rem 0;
-            text-align: center;
-        }
-        
-        audio, video {
-            width: 100%;
-            max-width: 600px;
-            margin: 0.5rem 0;
-        }
-        
-        canvas {
-            background-color: #333;
-            border: 1px solid #666;
-            border-radius: 4px;
+            
+            .scroll-container {
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body class="experiments-theme">
     <header>
         <h1>HTML Experiments</h1>
-        <!-- 汉堡菜单按钮 -->
+        <!-- Hamburger Menu Button -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="menu-toggle-label">
             <span></span>

@@ -1,12 +1,12 @@
-// Hello World 控制台输出元素
+// Hello World Console Output Element
 class HelloWorldConsole extends HTMLElement {
   constructor() {
     super();
     
-    // 直接向控制台输出 "Hello World!"
+    // Directly output "Hello World!" to the console
     console.log("Hello World!");
   }
 }
 
-// 定义新的元素
+// Define the new element
 customElements.define('hello-world-console', HelloWorldConsole);

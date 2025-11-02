@@ -1,6 +1,6 @@
-/* GTA 5 主题样式 */
+/* GTA 5 Theme Styles */
 
-/* 字体定义 */
+/* Font Definition */
 @font-face {
   font-family: 'Pricedown';
   src: url('fonts/pricedown.otf') format('opentype');
@@ -8,9 +8,9 @@
   font-style: normal;
 }
 
-/* CSS 变量定义 */
+/* CSS Variables Definition */
 :root {
-  /* GTA 主色调 */
+  /* GTA Main Colors */
   --gta-blue: #4A7B9D;
   --gta-red: #8B0000;
   --gta-gold: #FFD700;
@@ -19,25 +19,25 @@
   --gta-light-gray: #eee;
   --gta-dark-gray: #333;
   
-  /* 广色域颜色示例 - 使用更广的色域颜色空间 display-p3 */
+  /* Wide Gamut Colors Example - Using wider gamut color space display-p3 */
   --gta-blue-wide: color(display-p3 0.29 0.48 0.61);
   --gta-gold-wide: color(display-p3 1 0.84 0);
-  /* 使用 color-mix() 函数混合两种颜色 */
+  /* Using color-mix() function to blend two colors */
   --gta-mixed-color: color-mix(in srgb, var(--gta-blue), var(--gta-gold) 50%);
   
-  /* 霞光主题颜色 */
+  /* Sunset Theme Colors */
   --sunset-orange: #FF5E62;
   --sunset-pink: #ff9966;
   --sunset-gold: #FFB347;
   
-  /* 霓虹主题颜色 */
+  /* Neon Theme Colors */
   --neon-purple: #1f005c;
   --neon-blue: #3b0066;
   --neon-darkblue: #00142d;
   --neon-cyan: #00FFFF;
   --neon-pink: #FF00A8;
   
-  /* 漫画主题颜色 */
+  /* Comic Theme Colors */
   --comic-yellow: #f2eecb;
   --comic-red: #e63946;
   --comic-blue: #457b9d;
@@ -45,40 +45,40 @@
   --comic-darkblue: #1d3557;
   --comic-darkgreen: #2a4d2d;
   
-  /* 字体 */
+  /* Fonts */
   --font-heading: 'Impact', sans-serif;
   --font-body: 'Roboto', 'Open Sans', sans-serif;
 }
 
-/* 基础样式重置 */
+/* Base Style Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* 主题样式 */
-/* 漫画封面风格 - 用于首页 */
+/* Theme Styles */
+/* Comic Cover Style - For Home Page */
 .home-theme {
   background-color: var(--comic-yellow);
   color: var(--comic-darkblue);
 }
 
-/* 日落风格 - 用于关于页面和项目页面 */
+/* Sunset Style - For About Page and Projects Page */
 .about-theme,
 .projects-theme {
   background: linear-gradient(135deg, var(--sunset-pink) 0%, var(--sunset-orange) 100%);
   color: var(--gta-white);
 }
 
-/* 霓虹风格 - 用于实验页面和联系页面 */
+/* Neon Style - For Experiments Page and Contact Page */
 .experiments-theme,
 .contact-theme {
   background: radial-gradient(circle at 30% 30%, var(--neon-purple), var(--neon-blue), var(--neon-darkblue));
   color: var(--gta-white);
 }
 
-/* 标题样式 */
+/* Heading Styles */
 h1, h2, h3 {
   font-family: var(--font-heading);
   text-transform: uppercase;
@@ -87,7 +87,7 @@ h1, h2, h3 {
   letter-spacing: 1px;
 }
 
-/* 首页标题样式 - 改善可读性 */
+/* Home Page Heading Styles - Improve Readability */
 .home-theme h1, 
 .home-theme h2, 
 .home-theme h3 {
@@ -96,14 +96,14 @@ h1, h2, h3 {
   color: var(--comic-darkgreen);
 }
 
-/* 正文样式 */
+/* Body Styles */
 body, p, li, label, input, textarea {
   font-family: var(--font-body);
   color: var(--gta-light-gray);
   line-height: 1.6;
 }
 
-/* 漫画主题下的正文样式 */
+/* Comic Theme Body Styles */
 .home-theme body,
 .home-theme p,
 .home-theme li,
@@ -111,7 +111,7 @@ body, p, li, label, input, textarea {
   color: var(--comic-darkblue);
 }
 
-/* 链接样式 */
+/* Link Styles */
 a {
   color: var(--gta-gold);
   text-decoration: none;
@@ -122,7 +122,7 @@ a {
   }
 }
 
-/* 按钮样式 */
+/* Button Styles */
 .btn, button, input[type="submit"] {
   font-family: var(--font-heading);
   font-size: 18px;
@@ -130,14 +130,14 @@ a {
   cursor: pointer;
   transition: all 0.2s ease;
   
-  /* 按钮悬停效果 */
+  /* Button Hover Effect */
   &:hover {
     transform: scale(1.05);
     transition: all 0.3s ease;
   }
 }
 
-/* 按钮样式 - 漫画主题 */
+/* Button Styles - Comic Theme */
 .home-theme .btn,
 .home-theme button,
 .home-theme input[type="submit"] {
@@ -154,7 +154,7 @@ a {
   }
 }
 
-/* 按钮样式 - 日落主题 */
+/* Button Styles - Sunset Theme */
 .about-theme .btn,
 .about-theme button,
 .about-theme input[type="submit"],
@@ -163,7 +163,7 @@ a {
 .projects-theme input[type="submit"] {
   border: 3px solid transparent;
   border-radius: 12px;
-  /* 使用广色域颜色 */
+  /* Using Wide Gamut Colors */
   background: linear-gradient(var(--gta-blue-wide), var(--gta-gold-wide)) padding-box,
               linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
   box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
@@ -176,7 +176,7 @@ a {
   }
 }
 
-/* 按钮样式 - 霓虹主题 */
+/* Button Styles - Neon Theme */
 .experiments-theme .btn,
 .experiments-theme button,
 .experiments-theme input[type="submit"],
@@ -203,19 +203,19 @@ a {
   }
 }
 
-/* 卡片样式 */
+/* Card Styles */
 .card, article, .interest-card {
   padding: 1rem;
   margin: 1rem 0;
   
-  /* 卡片悬停效果 */
+  /* Card Hover Effect */
   &:hover {
     transform: translateY(-5px);
     transition: all 0.3s ease;
   }
 }
 
-/* 卡片样式 - 漫画主题 */
+/* Card Styles - Comic Theme */
 .home-theme .card,
 .home-theme article,
 .home-theme .interest-card {
@@ -231,7 +231,7 @@ a {
   }
 }
 
-/* 卡片样式 - 日落主题 */
+/* Card Styles - Sunset Theme */
 .about-theme .card,
 .about-theme article,
 .about-theme .interest-card,
@@ -240,13 +240,13 @@ a {
 .projects-theme .interest-card {
   border: 3px solid transparent;
   border-radius: 12px;
-  /* 使用广色域混合色 */
+  /* Using Wide Gamut Mixed Color */
   background: linear-gradient(var(--gta-mixed-color), var(--sunset-orange)) padding-box,
               linear-gradient(135deg, var(--sunset-gold), var(--sunset-orange)) border-box;
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* 卡片样式 - 霓虹主题 */
+/* Card Styles - Neon Theme */
 .experiments-theme .card,
 .experiments-theme article,
 .experiments-theme .interest-card,
@@ -265,22 +265,22 @@ a {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* 使用 :has() 选择器增强兴趣卡片悬停效果 */
-/* 当鼠标悬停在任何兴趣卡片上时，让所有兴趣卡片变暗 */
+/* Using :has() Selector to Enhance Interest Card Hover Effect */
+/* When mouse hovers over any interest card, make all interest cards dim */
 section:has(interest-card:hover) interest-card {
   opacity: 0.7;
   filter: brightness(0.8);
   transition: all 0.3s ease;
 }
 
-/* 但保持当前悬停的卡片正常亮度 */
+/* But keep the currently hovered card at normal brightness */
 section:has(interest-card:hover) interest-card:hover {
   opacity: 1;
   filter: brightness(1);
   transform: scale(1.02);
 }
 
-/* 霓虹动画效果 */
+/* Neon Animation Effect */
 @keyframes pulse {
   0%, 100% { 
     box-shadow: 
@@ -303,7 +303,7 @@ section:has(interest-card:hover) interest-card:hover {
   animation: pulse 1.5s infinite alternate;
 }
 
-/* 导航栏样式 */
+/* Navigation Bar Styles */
 nav {
   ul {
     list-style: none;
@@ -336,7 +336,7 @@ nav {
   }
 }
 
-/* 导航栏样式 - 漫画主题 */
+/* Navigation Bar Styles - Comic Theme */
 .home-theme nav ul {
   border: 4px solid var(--gta-black);
   box-shadow: 3px 3px 0 var(--gta-white), 6px 6px 0 var(--gta-black);
@@ -349,7 +349,7 @@ nav {
   }
 }
 
-/* 导航栏样式 - 日落主题 */
+/* Navigation Bar Styles - Sunset Theme */
 .about-theme nav ul,
 .projects-theme nav ul {
   border: 3px solid transparent;
@@ -359,7 +359,7 @@ nav {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* 导航栏样式 - 霓虹主题 */
+/* Navigation Bar Styles - Neon Theme */
 .experiments-theme nav ul,
 .contact-theme nav ul {
   border: 2px solid var(--neon-cyan);
@@ -374,7 +374,7 @@ nav {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* 页脚样式 */
+/* Footer Styles */
 footer {
   text-align: center;
   padding: 1rem;
@@ -406,13 +406,13 @@ footer {
   }
 }
 
-/* 页脚样式 - 漫画主题 */
+/* Footer Styles - Comic Theme */
 .home-theme footer {
   border-top: 4px solid var(--gta-black);
   background: rgba(255, 255, 255, 0.7);
 }
 
-/* 页脚样式 - 日落主题 */
+/* Footer Styles - Sunset Theme */
 .about-theme footer,
 .projects-theme footer {
   border-top: 3px solid transparent;
@@ -421,7 +421,7 @@ footer {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* 页脚样式 - 霓虹主题 */
+/* Footer Styles - Neon Theme */
 .experiments-theme footer,
 .contact-theme footer {
   border-top: 2px solid var(--neon-cyan);
@@ -435,7 +435,7 @@ footer {
   background: rgba(0, 0, 0, 0.3);
 }
 
-/* 表单样式 */
+/* Form Styles */
 form {
   padding: 1rem;
   border-radius: 12px;
@@ -446,14 +446,14 @@ form {
   }
 }
 
-/* 表单样式 - 漫画主题 */
+/* Form Styles - Comic Theme */
 .home-theme form {
   border: 4px solid var(--gta-black);
   box-shadow: 3px 3px 0 var(--gta-white), 6px 6px 0 var(--gta-black);
   background: rgba(255, 255, 255, 0.7);
 }
 
-/* 表单样式 - 日落主题 */
+/* Form Styles - Sunset Theme */
 .about-theme form,
 .projects-theme form {
   border: 3px solid transparent;
@@ -462,7 +462,7 @@ form {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3), 10px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* 表单样式 - 霓虹主题 */
+/* Form Styles - Neon Theme */
 .experiments-theme form,
 .contact-theme form {
   border: 2px solid var(--neon-cyan);
@@ -482,20 +482,20 @@ fieldset {
   margin: 1rem 0;
 }
 
-/* 表单字段样式 - 漫画主题 */
+/* Form Field Styles - Comic Theme */
 .home-theme fieldset {
   border: 3px solid var(--gta-black);
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* 表单字段样式 - 日落主题 */
+/* Form Field Styles - Sunset Theme */
 .about-theme fieldset,
 .projects-theme fieldset {
   border: 2px solid rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* 表单字段样式 - 霓虹主题 */
+/* Form Field Styles - Neon Theme */
 .experiments-theme fieldset,
 .contact-theme fieldset {
   border: 1px solid var(--neon-cyan);
@@ -507,7 +507,7 @@ input, textarea {
   border-radius: 4px;
   padding: 0.5rem;
   
-  /* 表单元素焦点效果 */
+  /* Form Element Focus Effect */
   &:focus {
     transform: scale(1.02);
     transition: all 0.2s ease;
@@ -519,7 +519,7 @@ input, textarea {
   }
 }
 
-/* GTA 5 游戏介绍样式 */
+/* GTA 5 Game Introduction Styles */
 .gta-introduction {
   max-height: 300px;
   overflow-y: auto;
@@ -528,7 +528,7 @@ input, textarea {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid var(--gta-gold);
   
-  /* 隐藏滚动条 - 使用新特性 */
+  /* Hide Scrollbar - Using New Feature */
   scrollbar-width: none; /* Firefox */
   
   &::-webkit-scrollbar {
@@ -536,14 +536,14 @@ input, textarea {
   }
 }
 
-/* 响应式设计 - 手机设备 */
+/* Responsive Design - Mobile Devices */
 @media screen and (max-width: 768px) {
-  /* 调整主容器内边距 */
+  /* Adjust Main Container Padding */
   main {
     padding: 0.5rem;
   }
   
-  /* 标题自适应调整，使用动态字体大小 */
+  /* Heading Responsive Adjustment, Using Dynamic Font Size */
   h1, .home-theme h1, .about-theme h1, .projects-theme h1, .experiments-theme h1, .contact-theme h1 {
     font-size: clamp(1.5rem, 8vw, 2.5rem);
     white-space: normal;
@@ -558,41 +558,41 @@ input, textarea {
     text-overflow: ellipsis;
   }
   
-  /* 使用动态视口单位调整兴趣卡片在小屏幕上的尺寸 */
+  /* Use Dynamic Viewport Units to Adjust Interest Card Size on Small Screens */
   interest-card {
     width: clamp(280px, 90dvw, 100%);
     display: block;
     margin: 12px auto;
   }
   
-  /* 调整段落字体大小 */
+  /* Adjust Paragraph Font Size */
   p {
     font-size: 1.1rem;
   }
   
-  /* 调整卡片内边距 */
+  /* Adjust Card Padding */
   .card, article, .interest-card {
     padding: 0.8rem;
   }
   
-  /* 调整按钮内边距 */
+  /* Adjust Button Padding */
   .btn, button, input[type="submit"] {
     padding: 10px 20px;
   }
   
-  /* 调整iframe大小，使用动态视口单位 */
+  /* Adjust Iframe Size, Using Dynamic Viewport Units */
   iframe {
     width: 100dvw;
     height: clamp(200px, 50dvh, 400px);
     margin-left: calc(-0.5rem);
   }
   
-  /* 调整GTA介绍区域高度，使用动态视口单位 */
+  /* Adjust GTA Introduction Area Height, Using Dynamic Viewport Units */
   .gta-introduction {
     max-height: 30dvh;
   }
   
-  /* 调整页脚 */
+  /* Adjust Footer */
   footer {
     text-align: center;
     padding: 1rem 0.5rem;
@@ -605,7 +605,7 @@ input, textarea {
     margin-top: 0.5rem;
   }
   
-  /* 汉堡菜单样式 */
+  /* Hamburger Menu Styles */
   .menu-toggle-label {
     display: flex;
     flex-direction: column;
@@ -666,20 +666,20 @@ input, textarea {
   }
 }
 
-/* 响应式设计 - 平板设备 */
+/* Responsive Design - Tablet Devices */
 @media screen and (max-width: 1024px) {
-  /* 导航栏调整 */
+  /* Navigation Bar Adjustment */
   nav ul {
     flex-wrap: wrap;
   }
   
-  /* 兴趣卡片在平板上的调整 */
+  /* Interest Card Adjustment on Tablets */
   interest-card {
     width: calc(50% - 2rem);
     display: inline-block;
   }
   
-  /* 调整标题字体大小 */
+  /* Adjust Heading Font Size */
   h1 {
     font-size: 3rem;
   }
@@ -689,13 +689,13 @@ input, textarea {
   }
 }
 
-/* 确保在大屏幕上保持原有样式 */
+/* Ensure Original Styles on Large Screens */
 @media screen and (min-width: 1025px) {
-  /* 这里可以添加PC端的特定样式，如果需要的话 */
-  /* 当前保持现有样式不变 */
+  /* Here can add PC-specific styles if needed */
+  /* Currently keep existing styles unchanged */
 }
 
-/* 进度条动画 */
+/* Progress Bar Animation */
 progress {
   transition: all 0.3s ease;
   

@@ -89,13 +89,13 @@
             color: #ccc;
         }
         
-        /* 汉堡菜单样式 */
-        /* 隐藏的复选框，用于存储菜单状态 */
+        /* Hamburger Menu Style */
+        /* Hidden checkbox to store menu state */
         .menu-toggle {
             display: none;
         }
         
-        /* 可见的汉堡图标，作为复选框的标签 */
+        /* Visible hamburger icon as checkbox label */
         .menu-toggle-label {
             display: none;
             flex-direction: column;
@@ -103,7 +103,7 @@
             padding: 5px;
             position: fixed;
             top: 1rem;
-            left: 1rem; /* 将菜单放置在左上角 */
+            left: 1rem; /* Place menu in top-left corner */
             z-index: 100;
         }
         
@@ -115,7 +115,7 @@
             transition: 0.3s;
         }
         
-        /* 响应式设计 - 手机设备 */
+        /* Responsive Design - Mobile Devices */
         @media screen and (max-width: 768px) {
             .menu-toggle-label {
                 display: flex;
@@ -127,7 +127,7 @@
                 background: rgba(0, 0, 0, 0.9);
                 position: fixed;
                 top: 0;
-                left: -100%; /* 默认状态下，菜单滑出屏幕左侧 */
+                left: -100%; /* By default, menu slides out to the left */
                 width: 80%;
                 height: 100%;
                 padding: 4rem 2rem;
@@ -135,12 +135,12 @@
                 transition: left 0.3s ease;
             }
             
-            /* 当复选框被选中时，菜单滑入屏幕 */
+            /* When checkbox is checked, menu slides into screen */
             .menu-toggle:checked + .menu-toggle-label + nav ul {
                 left: 0;
             }
             
-            /* 动画效果：当菜单打开时，三条线变成 "X" */
+            /* Animation effect: When menu opens, three lines become "X" */
             .menu-toggle:checked + .menu-toggle-label span:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 5px);
             }
@@ -176,7 +176,7 @@
 <body class="contact-theme">
     <header>
         <h1>Contact Me</h1>
-        <!-- 汉堡菜单按钮 (使用隐藏的 checkbox 和 label 实现纯CSS交互) -->
+        <!-- Hamburger Menu Button (Using hidden checkbox and label for pure CSS interaction) -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="menu-toggle-label">
             <span></span>

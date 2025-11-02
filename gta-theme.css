@@ -203,29 +203,6 @@ a {
   }
 }
 
-/* 霓虹动画效果 */
-@keyframes pulse {
-  0%, 100% { 
-    box-shadow: 
-      0 0 5px var(--neon-cyan),
-      0 0 10px var(--neon-cyan),
-      0 0 20px var(--neon-pink),
-      inset 0 0 10px var(--neon-cyan);
-  }
-  50% { 
-    box-shadow: 
-      0 0 10px var(--neon-cyan),
-      0 0 20px var(--neon-cyan),
-      0 0 30px var(--neon-pink),
-      inset 0 0 15px var(--neon-cyan);
-  }
-}
-
-.experiments-theme .btn,
-.contact-theme .btn {
-  animation: pulse 1.5s infinite alternate;
-}
-
 /* 卡片样式 */
 .card, article, .interest-card {
   padding: 1rem;
@@ -286,6 +263,44 @@ a {
     5px 5px 0 rgba(0, 0, 0, 0.3),
     10px 10px 0 rgba(0, 0, 0, 0.15);
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* 使用 :has() 选择器增强兴趣卡片悬停效果 */
+/* 当鼠标悬停在任何兴趣卡片上时，让所有兴趣卡片变暗 */
+section:has(interest-card:hover) interest-card {
+  opacity: 0.7;
+  filter: brightness(0.8);
+  transition: all 0.3s ease;
+}
+
+/* 但保持当前悬停的卡片正常亮度 */
+section:has(interest-card:hover) interest-card:hover {
+  opacity: 1;
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+/* 霓虹动画效果 */
+@keyframes pulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px var(--neon-cyan),
+      0 0 20px var(--neon-pink),
+      inset 0 0 10px var(--neon-cyan);
+  }
+  50% { 
+    box-shadow: 
+      0 0 10px var(--neon-cyan),
+      0 0 20px var(--neon-cyan),
+      0 0 30px var(--neon-pink),
+      inset 0 0 15px var(--neon-cyan);
+  }
+}
+
+.experiments-theme .btn,
+.contact-theme .btn {
+  animation: pulse 1.5s infinite alternate;
 }
 
 /* 导航栏样式 */

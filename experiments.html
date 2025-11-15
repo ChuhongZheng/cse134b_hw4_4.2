@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="gta-theme.css">
     <script src="custom-elements.js"></script>
     <style>
+        /* 启用并配置 View Transitions */
+        :root::view-transition {
+            view-transition: none;
+        }
+
         body {
             font-family: 'Roboto', 'Open Sans', sans-serif;
             margin: 0;
@@ -240,6 +245,31 @@
     <noscript>
         <p><strong>This site works best with JavaScript enabled.</strong></p>
     </noscript>
+
+    <script>
+        // 添加对 View Transition API 的支持
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // 检查浏览器是否支持 View Transitions
+                    if (!document.startViewTransition) return;
+                    
+                    // 仅处理站内页面导航（排除锚点和外部链接）
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#') || href.startsWith('http')) return;
+                    
+                    e.preventDefault();
+                    
+                    // 使用 View Transition API 开始页面转换
+                    document.startViewTransition(() => {
+                        window.location.href = href;
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

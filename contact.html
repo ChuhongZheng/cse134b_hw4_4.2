@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="gta-theme.css">
     <script src="custom-elements.js"></script>
     <style>
+        /* Enable view transitions */
+        :root {
+            view-transition: root;
+        }
+        
+        ::view-transition-old(root) {
+            animation: fade-out 0.3s ease-in-out;
+        }
+        
+        ::view-transition-new(root) {
+            animation: fade-in 0.3s ease-in-out;
+        }
+        
+        @keyframes fade-out {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         body {
             font-family: 'Roboto', 'Open Sans', sans-serif;
         }
@@ -173,7 +195,7 @@
         }
     </style>
 </head>
-<body class="contact-theme">
+<body class="contact-theme" style="view-transition-name: root;">
     <header>
         <h1>Contact Me</h1>
         <!-- Hamburger Menu Button (Using hidden checkbox and label for pure CSS interaction) -->
@@ -259,5 +281,31 @@
         <p><strong>This site works best with JavaScript enabled.</strong></p>
     </noscript>
     
+    <script>
+        // Add View Transition API support for navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Check if View Transitions are supported
+                    if (!document.startViewTransition) return;
+                    
+                    // Only handle navigation to other pages in our site
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#') || 
+                        href.startsWith('http') || 
+                        href.startsWith('mailto')) return;
+                    
+                    e.preventDefault();
+                    
+                    // Start the view transition
+                    document.startViewTransition(() => {
+                        window.location.href = href;
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

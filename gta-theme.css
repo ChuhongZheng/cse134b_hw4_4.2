@@ -8,6 +8,11 @@
   font-style: normal;
 }
 
+/* Enable View Transition API for cross-document transitions */
+@view-transition {
+  navigation: auto;
+}
+
 /* CSS Variables Definition */
 :root {
   /* GTA Main Colors */

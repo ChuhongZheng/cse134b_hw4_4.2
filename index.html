@@ -316,5 +316,30 @@
             <p><strong>This site works best with JavaScript enabled.</strong></p>
         </noscript>
     </div>
+
+    <script>
+        // Add View Transition API support for navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Check if View Transitions are supported
+                    if (!document.startViewTransition) return;
+                    
+                    // Only handle navigation to other pages in our site
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#') || href.startsWith('http')) return;
+                    
+                    e.preventDefault();
+                    
+                    // Start the view transition
+                    document.startViewTransition(() => {
+                        window.location.href = href;
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

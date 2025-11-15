@@ -1,4 +1,50 @@
-# cse134b_hw3_portfolio_css
+# CSE 134B HW4 - Portfolio Website with Modern CSS
+
+This is a portfolio website created as part of the CSE 134B course at UC San Diego. It demonstrates modern CSS techniques and responsive design principles.
+
+## View Transition API Implementation
+
+I've implemented the View Transition API to provide smooth transitions between pages in this multi-page application (MPA).
+
+### How to Test the View Transition Feature
+
+1. **Prerequisites**: 
+   - Use a modern browser that supports the View Transition API (Chrome 111+, Edge 111+)
+   - Firefox and Safari currently do not support this feature
+
+2. **How to Trigger**:
+   - Navigate between any pages using the navigation menu (Home, About, Projects, Experiments, Contact)
+   - Click on any navigation link to see the smooth transition effect
+   - The transition will appear as a cross-fade between pages
+
+3. **What You'll See**:
+   - When clicking a navigation link, instead of an instant page load, you'll see a smooth animation
+   - The old page content will transition to the new page content with a fade effect
+   - On browsers that don't support the View Transition API, navigation works normally
+
+4. **Implementation Details**:
+   - Added `@view-transition` rule in [gta-theme.css](file:///e:/ucsd/25fall/cse134b/cse134b_hw4_4.2/gta-theme.css) to enable cross-document transitions
+   - Added JavaScript to intercept navigation clicks and trigger view transitions
+   - Used `document.startViewTransition()` API for smooth page transitions
+   - Implemented graceful degradation for browsers that don't support the API
+
+### Fallback Behavior
+
+For browsers that don't support the View Transition API (like Firefox and Safari), the website will continue to work normally with standard page navigation. The feature is implemented with progressive enhancement principles.
+
+## Other CSS Features
+
+This website also demonstrates various modern CSS features required by the assignment:
+
+- Flexbox/Grid layout
+- CSS variables with fallbacks
+- Custom font imports
+- Relative units (em/rem/%)
+- Dynamic viewport units (dvw/dvh)
+- CSS animations and transitions
+- Media queries for responsive design
+- Nested and scoped CSS
+- Baseline 2024/2025 CSS features
 
 ## Part 1 - Standards Based CSS Use (30 pts + 4 EC points)
 
